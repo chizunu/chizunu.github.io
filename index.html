@@ -1,0 +1,79 @@
+<head><link rel="stylesheet" href="style.css">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1 id="clickme" value="4" class='mouse enf1'>lixdev.ml</h1>
+</head>
+<body>
+
+    <p id="1" value="4" class='mouse enf'>projects</p>
+    <br>
+    <br>
+    <img value="4" class='mouse prjimg' src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F09%2Fftx-nft-handwritten-test-270k-usd-000.jpg?w=960&cbr=1&q=90&fit=max" alt="">
+    <br>
+    <br>
+    <a value="4" class='mouse enf2'>lorem</a>
+    <br>
+    <img value="4" class='mouse prjimg' src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F09%2Fftx-nft-handwritten-test-270k-usd-000.jpg?w=960&cbr=1&q=90&fit=max" alt="">
+    <br>
+    <br>
+    <a value="4" class='mouse enf2'>ipsum</a>
+    <br>
+    <img value="4" class='mouse prjimg' src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F09%2Fftx-nft-handwritten-test-270k-usd-000.jpg?w=960&cbr=1&q=90&fit=max" alt="">
+    <br>
+    <br>
+    <a value="4" class='mouse enf2'>lorem</a>
+</body>
+
+<script type="text/javascript">
+    document.addEventListener("mousemove", parallax);
+    function parallax(event) {
+      this.querySelectorAll(".mouse").forEach((shift) => {
+        const position = shift.getAttribute("value");
+        const x = (window.innerWidth - event.pageX * position) / 90;
+        const y = (window.innerHeight - event.pageY * position) / 90;
+
+        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      });
+    }
+    document.getElementById("clickme").onclick = function(){clickme()};
+    wow = 1
+    function clickme() {
+        if(wow == 1){
+            wowstr = "wow";
+        }
+        if(wow == 2){
+            wowstr = "double wow";
+        }
+        if(wow == 3){
+            wowstr = "triple wow!";
+        }
+        if(wow == 4){
+            wowstr = "quadruple wow!";
+        }
+        if(wow == 5){
+            wowstr = "quintuple wow!";
+        }
+        if(wow == 6){
+            wowstr = "super wow!";
+        }
+        if(wow == 10){
+            wowstr = "ultra wow!";
+        }
+        if(wow == 20){
+            wowstr = "hiper wow!!";
+        }
+        if(wow == 50){
+            wowstr = "ultrahiper wow!!!";
+        }
+        if(wow == 100){
+            wowstr = "ultimate wow!!!!";
+        }
+        document.getElementById("1").innerHTML = wowstr;
+        wow = wow + 1
+        
+    }
+
+  </script>
