@@ -3,9 +3,10 @@
 
 html {
     font-family: 'Source Code Pro', monospace;
-    background-color: rgb(41, 41, 41);
+    background-image: url(background.png);
     color: white;	
     cursor:url(cursor.png), auto;
+    background-attachment: fixed;
 }
 
 body {
@@ -35,7 +36,7 @@ a {
 .enf1 {
     transition: 0.5s;
     font-size: 60px;
-    position: relative;
+    z-index: 1000;
 }
 .enf1:hover {
     transition: 0.5s;
