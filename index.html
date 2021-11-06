@@ -1,79 +1,80 @@
-<head><link rel="stylesheet" href="style.css">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <title>lix :)</title>
-    <h1 id="clickme" value="4" class='mouse enf1'>lixdev.ml</h1>
-</head>
-<body>
+<title id="title">lixdev.ml</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<div class="terminal">
+  <div id="history">
+  </div>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <clr id="index" class="purple">lixdev.ml</clr> <clr id="index1" class="green">[v18.04 LTS]</clr> <clr id="index2"> <br><br> use <clr class="green"> help</clr> for a list of commands <br><br></clr>
+  <div class="line">
+    <span id="path">[root@lixdev.ml]&nbsp;$&nbsp;</span>
+    <input type="text" id="input">
+  </div>
+</div>
 
-    <p id="1" value="4" class='mouse enf'>projects</p>
-    <br>
-    <br>
-    <img value="4" class='mouse prjimg' src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F09%2Fftx-nft-handwritten-test-270k-usd-000.jpg?w=960&cbr=1&q=90&fit=max" alt="">
-    <br>
-    <br>
-    <a value="4" class='mouse enf2'>lorem</a>
-    <br>
-    <img value="4" class='mouse prjimg' src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F09%2Fftx-nft-handwritten-test-270k-usd-000.jpg?w=960&cbr=1&q=90&fit=max" alt="">
-    <br>
-    <br>
-    <a value="4" class='mouse enf2'>ipsum</a>
-    <br>
-    <img value="4" class='mouse prjimg' src="https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2021%2F09%2Fftx-nft-handwritten-test-270k-usd-000.jpg?w=960&cbr=1&q=90&fit=max" alt="">
-    <br>
-    <br>
-    <a value="4" class='mouse enf2'>lorem</a>
-</body>
+<script>$(function() {
+    $('.terminal').on('click', function() {
+        $('#input').focus();
+    });
+    
+    $('#input').on('keydown', function search(e) {
+      document.getElementById("index").innerHTML = "";
+      document.getElementById("index1").innerHTML = "";
+      document.getElementById("index2").innerHTML = "";
+        if (e.keyCode == 13) {
+            if ($(this).val() == "help") {
+              $('#history').append("[root@lixdev.ml]&nbsp;$&nbsp" + $(this).val() + " <br><br>");
+              $('#history').append('<clr class="purple"> lixdev.ml</clr><clr class="green"> [v18.04 LTS] </clr><br><br> Commands: <br><br> <clr class="green">ls</clr> | list all projects | usage: ls <br><br> <clr class="green">view</clr> | show info of a project | usage: view {project-name} <br><br>');
+              document.getElementById("title").innerHTML = 'lixdev.ml - ' + $(this).val();
+            } else if ($(this).val() == "ls") {
+              $('#history').append("[root@lixdev.ml]&nbsp;$&nbsp" + $(this).val() + " <br><br>");
+              $('#history').append('<clr class="orange"> cytrus</clr> | A simple css framework<br><br>');
+              document.getElementById("title").innerHTML = 'lixdev.ml - ' + $(this).val();
 
-<script type="text/javascript">
-    document.addEventListener("mousemove", parallax);
-    function parallax(event) {
-      this.querySelectorAll(".mouse").forEach((shift) => {
-        const position = shift.getAttribute("value");
-        const x = (window.innerWidth - event.pageX * position) / 90;
-        const y = (window.innerHeight - event.pageY * position) / 90;
+            } else if ($(this).val() == "clear") {
+              document.getElementById("history").innerHTML = "";
+              document.getElementById("title").innerHTML = "lixdev.ml";
+            
+            } else if ($(this).val() == "") {
+              $('#history').append("[root@lixdev.ml]&nbsp;$&nbsp" + $(this).val() + " <br><br>");
+              document.getElementById("title").innerHTML = "lixdev.ml";
 
-        shift.style.transform = `translateX(${x}px) translateY(${y}px)`;
-      });
-    }
-    document.getElementById("clickme").onclick = function(){clickme()};
-    wow = 1
-    function clickme() {
-        if(wow == 1){
-            wowstr = "wow";
+            } else if ($(this).val().startsWith("view") == true) {
+              document.getElementById("title").innerHTML = 'lixdev.ml - ' + $(this).val();
+              $('#history').append("[root@lixdev.ml]&nbsp;$&nbsp" + $(this).val() + " <br><br>");
+              var project = $(this).val().substring(5);
+              if (project == "cytrus") {
+                $('#history').append('<clr class="orange"> cytrus</clr> is a open source simple pure css framework<br><br> download: <a href="https://www.test.com">click here</a> <br><br>');
+              }
+              else {
+                $('#history').append('view: unknown project "' + project +'" <br><br>');
+              }
+            } else if ($(this).val() == "view") {
+              document.getElementById("title").innerHTML = "lixdev.ml";
+              $('#history').append("[root@lixdev.ml]&nbsp;$&nbsp" + $(this).val() + " <br><br>");
+              $('#history').append('view: usage: view <clr class="green">{project-name}</clr><br><br>');
+              document.getElementById("title").innerHTML = 'lixdev.ml - ' + $(this).val();
+            } else if ($(this).val() == "script") {
+              document.getElementById("title").innerHTML = "lixdev.ml";
+              $('#history').append("[root@lixdev.ml]&nbsp;$&nbsp" + $(this).val() + " <br><br>");
+              $('#history').append('script: usage: script <clr class="green">{script}</clr><br><br>');
+            } else if ($(this).val().startsWith("script") == true) {
+              document.getElementById("title").innerHTML = 'lixdev.ml - ' + $(this).val();
+              $('#history').append("[root@lixdev.ml]&nbsp;$&nbsp" + $(this).val() + " <br><br>");
+              var script = $(this).val().substring(7);
+              var endscript = "/script>"
+              $('#history').append('script: running: ' + script + '<br><br>');
+              $('#history').append("<script>" + script + "<" + endscript);
+            } else {
+              document.getElementById("title").innerHTML = "lixdev.ml";
+              $('#history').append("[root@lixdev.ml] $ " + $(this).val() + " <br><br>");
+              $('#history').append($(this).val() + ': unknown command <br><br>');
+          }
+
+
+            // clear the input
+            $('#input').val('');
+
         }
-        if(wow == 2){
-            wowstr = "double wow";
-        }
-        if(wow == 3){
-            wowstr = "triple wow!";
-        }
-        if(wow == 4){
-            wowstr = "quadruple wow!";
-        }
-        if(wow == 5){
-            wowstr = "quintuple wow!";
-        }
-        if(wow == 6){
-            wowstr = "super wow!";
-        }
-        if(wow == 7){
-            wowstr = "ultra wow!";
-        }
-        if(wow == 8){
-            wowstr = "hiper wow!!";
-        }
-        if(wow == 9){
-            wowstr = "ultrahiper wow!!!";
-        }
-        if(wow == 10){
-            wowstr = "ultimate wow!!!!";
-        }
-        document.getElementById("1").innerHTML = wowstr;
-        wow = wow + 1
-        
-    }
-  </script>
+    });
+});</script>

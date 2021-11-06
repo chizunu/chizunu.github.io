@@ -1,90 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap');
-
-html {
-    font-family: 'JetBrains Mono', monospace;
-    background-image: url(background.png);
-    color: white;	
-    cursor:url(cursor.png), auto;
-    background-attachment: fixed;
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto&display=swap');
 
 body {
-    text-align: center;
-
-    margin: 0 auto;
+    background: black;
 }
 
-a {
-    text-decoration: none;
-    display:block;
+.terminal{
     color: white;
-    cursor:url(cursor.png), auto;
-}
+    font-family: 'JetBrains Mono', monospace;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+  .line{
+    display: table;
+    width: 100%;
+  }
+  
+  .terminal span{
+    display:table-cell; 
+    width:1px;
+  }
+  
+  .terminal input{
+    display:table-cell; 
+    width:100%;
+    font-family: 'JetBrains Mono', monospace;
+    border: none;
+    background: black;
+    color: white;
+    outline: none;
+  }
 
-.enf {
-    transition: 0.5s;
-    font-size: 45px;
-}
-.enf:hover {
-    transition: 0.5s;
-    font-size: 40px;
-    background: -webkit-linear-gradient(rgb(232, 157, 255), rgb(115, 204, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.enf1 {
-    transition: 0.5s;
-    font-size: 60px;
-    z-index: 1000;
-}
-.enf1:hover {
-    transition: 0.5s;
-    font-size: 55px;
-    background: -webkit-linear-gradient(rgb(232, 157, 255), rgb(115, 204, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  .orange {
+      color: rgb(255, 174, 0);
+  }
 
-}
+  .purple {
+    color: rgb(142, 43, 255);
+  }
 
-.enf2 {
-    transition: 0.5s;
-    font-size: 30px;
-}
-.enf2:hover {
-    transition: 0.5s;
-    font-size: 25px;
-    background: -webkit-linear-gradient(rgb(232, 157, 255), rgb(115, 204, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  .green {
+      color: rgb(0, 255, 0);
+  }
 
-.prjimg {
-    transition: 0.5s;
-    width: 350px;
-    border-radius: 20px;
-}
-
-.prjimg:hover {
-    transition: 0.5s;
-    width: 400px;
-    border-radius:10px; /*1*/
-    border:5px solid transparent; /*2*/
-    background:linear-gradient(45deg,rgb(133, 231, 255), rgb(220, 133, 255)) border-box; /*3*/
-    -webkit-mask: /*4*/
-       linear-gradient(#fff 0 0) padding-box, 
-       linear-gradient(#fff 0 0);
-    mask-composite: exclude; /*5*/
-}
-
-
-@-webkit-keyframes move {
-    from {
-        transform: translateY(+10px);
-        transition: 0.5s;
-    }
-    
-    to {
-      transform: translateY(-10px);
-      transition: 0.5s;
-    }
+  a {
+      color: rgb(145, 255, 255);
   }
