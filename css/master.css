@@ -33,12 +33,12 @@
 body {
   text-align: center;
   font-family: 'Indie Flower', cursive;
-  background-image: url("background.png");
 }
 
 html {
     color: white;
     cursor: cell;
+    background: url("background.png");
 }
 
 /* customizable snowflake styling */
