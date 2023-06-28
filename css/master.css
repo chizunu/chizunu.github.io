@@ -33,11 +33,11 @@
 body {
   text-align: center;
   font-family: 'Indie Flower', cursive;
+  background-image: url("background.png");
 }
 
 html {
     color: white;
-    background-image: url("background.png");
     cursor: cell;
 }
 
