@@ -38,7 +38,7 @@ body {
 html {
     color: white;
     cursor: cell;
-    background: url("background.png");
+    background-image: url("background.png");
 }
 
 /* customizable snowflake styling */
